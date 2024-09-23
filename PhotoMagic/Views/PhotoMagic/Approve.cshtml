@@ -1,0 +1,25 @@
+﻿@model ImageModel;
+
+@{
+    ViewData["Title"] = "Approve";
+}
+
+<div class="container text-center">
+    <div class="row">
+        @await Html.PartialAsync("_navbarPartialView")
+    </div>
+    <div class="row">
+        <img src="@Model.FilePath"/>
+    </div>
+    
+    <div class="row">
+        <form asp-controller="PhotoMagic" asp-action="ChooseAIEffect" method="post">
+            <button type="submit" class="btn btn-lg d-flex align-items-center">Potwierdź</button>
+            @Html.HiddenFor(m => m.FileName)
+        </form>
+        <form asp-controller="PhotoMagic" asp-action="Camera" method="post">
+            <button type="submit" class="btn btn-lg d-flex align-items-center">Nowe Zdjęcie</button>
+        </form>
+    </div>
+
+</div>

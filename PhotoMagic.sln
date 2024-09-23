@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoMagic", "PhotoMagic\PhotoMagic.csproj", "{86E5986F-5E8A-40C7-A623-FEE2FE5D70F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoMagic.Database", "PhotoMagic.Database\PhotoMagic.Database.csproj", "{846FC46E-3298-4153-BE76-1AD2A05A1DA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86E5986F-5E8A-40C7-A623-FEE2FE5D70F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E5986F-5E8A-40C7-A623-FEE2FE5D70F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E5986F-5E8A-40C7-A623-FEE2FE5D70F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E5986F-5E8A-40C7-A623-FEE2FE5D70F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846FC46E-3298-4153-BE76-1AD2A05A1DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846FC46E-3298-4153-BE76-1AD2A05A1DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846FC46E-3298-4153-BE76-1AD2A05A1DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846FC46E-3298-4153-BE76-1AD2A05A1DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FFA20CE-CDC5-472A-93F9-BF113CE0A723}
+	EndGlobalSection
+EndGlobal

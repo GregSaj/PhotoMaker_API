@@ -1,0 +1,24 @@
+﻿@model PhotoMagic.Program
+
+@{
+    ViewData["Title"] = "SaveOrShare";
+}
+
+<div class="container text-center">
+    <div class="row">
+        @await Html.PartialAsync("_navbarPartialView")
+    </div>
+    <div class="row">
+        <img src="/Content/Images/Logo.jpg" />
+    </div>
+
+    <div class="row">
+        <form asp-controller="PhotoMagic" asp-action="Finish" method="post">
+            <button type="submit" class="btn btn-lg d-flex align-items-center">Zapisz</button>
+        </form>
+        <form asp-controller="PhotoMagic" asp-action="Finish" method="post">
+            <button type="submit" class="btn btn-lg d-flex align-items-center">Udostępnij</button>
+        </form>
+    </div>
+
+</div>

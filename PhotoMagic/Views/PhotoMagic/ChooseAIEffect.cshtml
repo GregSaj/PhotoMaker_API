@@ -1,0 +1,46 @@
+﻿@model ImageModel;
+
+@{
+    ViewData["Title"] = "ChooseAIEffect";
+    
+}
+
+<div class="container text-center">
+    <div class="row">
+        @await Html.PartialAsync("_navbarPartialView")
+    </div>
+    <div class="row">
+        <img src="@Model.FilePath"/>
+    </div>
+    <div class="row">
+        <div class="container text-center">
+            <div class="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
+                <div class="col">
+                    <div class="p-3">Efekt1</div>
+                </div>
+                <div class="col">
+                    <div class="p-3">Efekt2</div>
+                </div>
+                <div class="col">
+                    <div class="p-3">Efekt3</div>
+                </div>
+                <div class="col">
+                    <div class="p-3">Efekt4</div>
+                </div>
+                <div class="col">
+                    <div class="p-3">Efekt5</div>
+                </div>
+                <div class="col">
+                    <div class="p-3">Efekt6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <form asp-controller="PhotoMagic" asp-action="SaveOrShare" method="post">
+            @Html.HiddenFor(m=>m.FileName)
+            <button type="submit" class="btn btn-lg d-flex align-items-center">Dalej</button>
+        </form>
+    </div>
+
+</div>

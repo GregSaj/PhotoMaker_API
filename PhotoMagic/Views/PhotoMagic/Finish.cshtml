@@ -1,0 +1,25 @@
+﻿@model PhotoMagic.Program
+
+@{
+    ViewData["Title"] = "Finish";
+}
+
+<div class="container text-center">
+    <div class="row">
+        <h1>Dziękujemy!</h1>
+    </div>
+    <div class="row">
+        <h1>Twoje zdjęcie weźmie
+            udział w konkursie
+            organizowanym w
+            naszym centrum!
+            Wyniki sprawdzaj na
+            wwww.silvertouch.pl</h1>
+    </div>
+    <div class="row">
+        <form asp-controller="PhotoMagic" asp-action="BackToStart" method="post">
+            <button type="submit" class="btn btn-lg d-flex align-items-center">Ok</button>
+        </form>
+    </div>
+
+</div>

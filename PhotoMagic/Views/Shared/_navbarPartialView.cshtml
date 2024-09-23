@@ -1,0 +1,78 @@
+﻿<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-start">
+                    <li class="page-item" id="prev-item">
+                        <a id="prev-link" class="page-link" href="#">Previous</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item" data-page="1"><span class="page-link">1</span></li>
+                    <li class="page-item" data-page="2"><span class="page-link">2</span></li>
+                    <li class="page-item" data-page="3"><span class="page-link">3</span></li>
+                    <li class="page-item" data-page="4"><span class="page-link" 
+                                                              @* @if (((int)ViewData["CurrentPage"]) < 4)
+                                                              { @:disabled *@
+                                                              }>4</span></li> 
+                    <li class="page-item" data-page="5"><span class="page-link">5</span></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Pobierz numer bieżącej strony z ViewData
+    var currentPage = @ViewData["CurrentPage"];
+    var prevLink = document.getElementById('prev-link');
+    var prevItem = document.getElementById('prev-item');
+
+    // Oblicz numer poprzedniej strony
+    var previousPage = currentPage > 1 ? currentPage - 1 : null;
+
+    // Określ link do poprzedniej strony
+    if (previousPage) {
+        // Ustaw link na odpowiednią stronę w kontrolerze
+        prevLink.href = '@Url.Action("Page", "PhotoMagic")?page=' + previousPage;
+        prevLink.classList.remove('disabled');
+    } else {
+        // Wyłącz przycisk "Previous" na stronie 1
+        prevItem.classList.add('disabled');
+        prevLink.href = '#';
+    }
+
+    // Podświetlenie aktywnej strony
+    var pageItems = document.querySelectorAll('.pagination .page-item');
+
+    pageItems.forEach(function (item) {
+        var pageNumber = parseInt(item.getAttribute('data-page'));
+
+        if (pageNumber === currentPage) {
+            item.classList.add('active');
+        }
+    });
+</script>
+
+<style>
+    .pagination .page-item.active .page-link {
+        font-weight: bold;
+        text-decoration: underline;
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    .pagination .page-link {
+        cursor: default;
+    }
+</style>
